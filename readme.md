@@ -1,28 +1,41 @@
 
 # USUARIO
+**ESTRUTURA:**
 |Atributo|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |idUsuario|Numero identificador do usuario|Int|-|PK - PRIMARY KEY|AUTO_INCREMENT|
 |apelidoUsuario|Apelido (nickname) indentificador do usuario|Varchar|16|NOT NULL|-
 |senhaUsuario| Senha encriptada do usuário|Varchar|64|NOT NULL|-
 |nomeUsuario| Nome real do usuario|Varchar|32|-|-|
+**DESCRICAO:**
+
+Usado para salvar usuarios no banco de dados
 
 # PRODUTO
+**ESTRUTURA:**
 |Atributo|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |idProduto|Numero indentificador do produto|Int|-|PK - PRIMARY KEY| AUTO_INCREMENT
 |idVendedor|Numero indentificador do vendedor (usuario) | Int | - | FK - FOREIGN KEY (usuario.idUsuario), NOT NULL| -
 |nomeProduto|Nome do produto|Varchar|32|NOT NULL|-|
 |precoProduto|Preco do produto|Float(5)|-|NOT NULL|-
+**DESCRICAO:**
+
+Usado para salvar produtos listados para venda no banco de dados.
 
 # COMPRA
+**ESTRUTURA:**
 |Atributo|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |idCompra|Numero indentificador da compra|Int|-|PK - PRIMARY KEY| AUTO_INCREMENT
 |idComprador|Numero indentificador do comprador (usuario)|Int|-|FK - FOREIGN KEY (usuario.idUsuario)|-
 |idProduto|Numero indentificador do produto (produto)|Int|-|FK - FOREIGN KEY (produto.idProduto)|-
+**DESCRICAO:**
+
+Usado para registrar compras efeituadas por usuarios.
 
 # ENDERECO
+**ESTRUTURA:**
 |Atributo|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |idEndereco|Numero indentificador do endereco|Int|-|PK - PRIMARY KEY| AUTO_INCREMENT
@@ -32,3 +45,6 @@
 |rua|Rua do endereco|Varchar|64|-|-
 |numero|Numero do endereco|Int|-|-|-
 |complemento|Complemento do endereco|Varchar|128|-|-
+**DESCRICAO:**
+
+Usado para salvar endereco de usuarios.
