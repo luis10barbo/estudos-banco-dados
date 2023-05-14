@@ -59,13 +59,13 @@ ADD FOREIGN KEY (idProduto) REFERENCES produto(idProduto);
 #ENDERECO
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("PE", "Recife", "Uma rua legal aqui", 290);
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Nelson Mesquita", 1466);
-INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Tiao Natureza", 2585);
+INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Rua Tiao Natureza", 2585, "Perto do supermercado");
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Aquarios", 1931);
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Londrina", 404);
-INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Avenida Adalberto Sena", 1409);
+INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Avenida Adalberto Sena", 1409, "Ao lado de um banco");
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Alagoas", 1450);
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua da Alegria", 1846);
-INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Alercio Dias", 2520);
+INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Rua Alercio Dias", 2520, "Casa amarela");
 
 # USUARIO
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("luis10barbo", "SenhaIndecifravelEncriptada", "Luis", 1);
