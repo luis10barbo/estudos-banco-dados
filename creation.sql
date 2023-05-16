@@ -37,9 +37,9 @@ CREATE TABLE endereco (
 
 CREATE TABLE compra (
 	idCompra int AUTO_INCREMENT,
-    idComprador int,
-    idProduto int,
-    quantidade int,
+    idComprador int NOT NULL,
+    idProduto int NOT NULL,
+    quantidade int NOT NULL,
     
     PRIMARY KEY (idCompra)
 );
@@ -57,9 +57,9 @@ ADD FOREIGN KEY (idProduto) REFERENCES produto(idProduto);
 
 # INSERTS
 #ENDERECO
-INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("PE", "Recife", "Uma rua legal aqui", 290);
-INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Nelson Mesquita", 1466);
-INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Rua Tiao Natureza", 2585, "Perto do supermercado");
+INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("PE", "Recife", "Uma rua legal aqui", 290); # Insere endereco em Pernambuco Recife, rua legal 290
+INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Nelson Mesquita", 1466); 
+INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Rua Tiao Natureza", 2585, "Perto do supermercado"); # Endereco AC, rio branco, rua tiao natureza 2585 perto de um supermercado
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Aquarios", 1931);
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Londrina", 404);
 INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Avenida Adalberto Sena", 1409, "Ao lado de um banco");

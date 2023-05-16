@@ -21,9 +21,9 @@
 |Nome|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |idCompra|Numero indentificador da compra|Int|-|PK - PRIMARY KEY| AUTO_INCREMENT
-|idComprador|Numero indentificador do comprador (usuario)|Int|-|FK - FOREIGN KEY (usuario.idUsuario)|-
-|idProduto|Numero indentificador do produto (produto)|Int|-|FK - FOREIGN KEY (produto.idProduto)|-
-|quantidade|Quantidade de produtos comprados|Int|-|-|-
+|idComprador|Numero indentificador do comprador (usuario)|Int|-|FK - FOREIGN KEY (usuario.idUsuario)| NOT NULL
+|idProduto|Numero indentificador do produto (produto)|Int|-|FK - FOREIGN KEY (produto.idProduto)|NOT NULL
+|quantidade|Quantidade de produtos comprados|Int|-|-|NOT NULL
 
 # ENDERECO
 |Nome|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
