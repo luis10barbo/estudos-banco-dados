@@ -57,6 +57,7 @@ ADD FOREIGN KEY (idProduto) REFERENCES produto(idProduto);
 
 # INSERTS
 #ENDERECO
+-- title: waga
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("PE", "Recife", "Uma rua legal aqui", 290); # Insere endereco em Pernambuco Recife, rua legal 290
 INSERT INTO endereco (estado, cidade, rua, numero) VALUES ("AC", "Rio Branco", "Rua Nelson Mesquita", 1466); 
 INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "Rio Branco", "Rua Tiao Natureza", 2585, "Perto do supermercado"); # Endereco AC, rio branco, rua tiao natureza 2585 perto de um supermercado
@@ -69,14 +70,14 @@ INSERT INTO endereco (estado, cidade, rua, numero, complemento) VALUES ("AC", "R
 
 # USUARIO
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("luis10barbo", "SenhaIndecifravelEncriptada", "Luis", 1);
-INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Miguel52", "1547406254", "Miguel", 2);
-INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Arthur14", "3075323201", "Arthur", 3);
+INSERT INTO usuario (apelidoUsuario, senhaUsuario, idEndereco) VALUES ("Miguel52", "1547406254",  2);
+INSERT INTO usuario (apelidoUsuario, senhaUsuario, idEndereco) VALUES ("Arthur14", "3075323201", 3);
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Heitor36", "4000582786", "Heitor", 4);
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Helena18", "2039936761", "Helena", 5);
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Alice25", "2481533379", "Alice", 6);
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Theo63", "705002875", "Theo", 7);
 INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Davi21", "2366450506", "Davi", 8);
-INSERT INTO usuario (apelidoUsuario, senhaUsuario, nomeUsuario, idEndereco) VALUES ("Laura29", "2021704977", "Laura", 9);
+INSERT INTO usuario (apelidoUsuario, senhaUsuario, idEndereco) VALUES ("Laura29", "2021704977", 9);
 
 #PRODUTOS
 INSERT INTO produto (idVendedor, nomeProduto, precoProduto, estoqueProduto) VALUES (1, "Pasta Termica", 30.99, 10);
@@ -99,4 +100,27 @@ SELECT * FROM produto;
 SELECT * FROM usuario;
 SELECT * FROM endereco;
 SELECT * FROM compra;
+
+# Items vendidos por usuarios
+SELECT uv.apelidoUsuario AS apelidoVendedor, uv.nomeUsuario AS nomeVendedor, p.nomeProduto, p.precoProduto
+FROM usuario AS uv
+INNER JOIN produto AS p
+ON uv.idUsuario = p.idVendedor;
+
+# Items comprados
+SELECT uc.apelidoUsuario AS apelidoComprador, uc.nomeUsuario AS nomeComprador, uv.apelidoUsuario AS apelidoVendedor, uv.nomeUsuario AS nomeVendedor,  p.nomeProduto, p.precoProduto, c.quantidade
+FROM compra AS c
+	INNER JOIN usuario AS uc
+	ON c.idComprador = uc.idUsuario
+    INNER JOIN produto AS p
+    ON c.idProduto = p.idProduto
+    INNER JOIN usuario AS uv
+    ON p.idVendedor = uv.idUsuario;
+
+# usuarios e onde elas moram
+SELECT u.apelidoUsuario, u.nomeUsuario, e.* 
+FROM endereco AS e
+INNER JOIN usuario as u
+ON u.idEndereco = e.idEndereco
+
 
