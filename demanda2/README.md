@@ -7,6 +7,7 @@
 |idEndereco| Numero indentificador endereco | Int | - | FK (endereco.idEndereco), NOT NULL | AUTO_INCREMENT
 |cnpjEscola| CNPJ da escola|Varchar|18|FK (escola.cnpjEscola),NOT NULL|-
 |nomeAluno|Nome do aluno|Varchar|64|NOT NULL|-
+
 Utilizado para salvar dados de aluno
 
   
@@ -17,6 +18,7 @@ Utilizado para salvar dados de aluno
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |cnpjEscola|CNPJ da escola|Varchar|18|PK|-
 |idEndereco|Numero indentificador endereco|Int|-|FK(endereco.idEndereco), NOT NULL|-
+
 Utilizado para salvar dados de escolas
 
 # ENDERECO
@@ -30,6 +32,7 @@ Utilizado para salvar dados de escolas
 |rua|Nome do rua|Varchar|64|-|-
 |numero|Numero do endereco|Int|-|-|-
 |complemento|Complemento do endereco|Varchar|128|-|-
+
 Utilizado para salvar dados de endereco. Pode ser ligado com Aluno, Escola e Professora.
 
 
@@ -49,6 +52,7 @@ Utilizado para salvar dados de professores
 |codigoDisciplina|Numero indentificador da disciplina|Int|-|PK|AUTO_INCREMENT
 |ementaDisciplina|Descricao das atividades da disciplina|Varchar|512|-|-
 |nomeDisciplina|Nome da disciplina|Varchar|32|NOT NULL|-
+
 Utilizado para salvar dados de disciplinas da escola
 
 # TURMA
@@ -59,6 +63,7 @@ Utilizado para salvar dados de disciplinas da escola
 |cnpjEscola|CNPJ da Escola da turma|Varchar|18|FK, NOT NULL|-
 |idTurno|Numero indentificador do turno da turma|Int|-|FK|-
 |sala|Sala da turma, consiste em 2 caracteres| Varchar|2|-|-
+
 Utilizado para salvar dados de turmas da escola
 
 # TURNO
@@ -69,6 +74,7 @@ Utilizado para salvar dados de turmas da escola
 |nomeTurno|Nome do turno|Varchar|32|-|-
 |horaInicio|Valor da hora(h) que comeca o turno|Int|-|NOT NULL|-
 |horaFinal|Valor da hora(h) que finaliza o turno|Int|-|NOT NULL|-
+
 Utilizado para salvar diversos turnos de aula da escola
 
 # TELEFONE
@@ -79,6 +85,7 @@ Utilizado para salvar diversos turnos de aula da escola
 |dddTelefone|DDD do telefone|Int|-|NOT_NULL|-
 |numeroTelefone|Numero do telefone|Int|-|NOT_NULL|-
 |tipoTelefone|Tipo do telefone, ex: Celular, Interfone|Varchar|32|-|-
+
 Utilizado para salvar telefones de professores, alunos e da escola
 
 
@@ -99,6 +106,7 @@ Utilizado para ligar varias turmas com varias disciplinas
 |id|Numero indentificador da interface disciplina_turma|Int|-|PK|AUTO_INCREMENT
 |matriculaProfessor|Numero de matricula do professor|Int|-|FK(professor.matriculaProfessor), NOT NULL|-
 |codigoDisciplina|Numero indentificador da disciplina|Int|-|FK(disciplina.codigoDisciplina), NOT NULL|-
+
 Utilizado para ligar varios professores com varias disciplinas
 
 # ESCOLA_PROFESSOR
@@ -108,5 +116,6 @@ Utilizado para ligar varios professores com varias disciplinas
 |id|Numero indentificador da interface escola_professor|Int|-|PK|AUTO_INCREMENT
 |matriculaProfessor|Numero de matricula do professor|Int|-|FK(professor.matriculaProfessor), NOT NULL|-
 |cnpjEscola|CNPJ da escola|Varchar|18|FK(escola.cnpjEscola), NOT NULL|-
+
 Utilizado para ligar varios professores com varias escolas
 
