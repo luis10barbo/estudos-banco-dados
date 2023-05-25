@@ -41,6 +41,7 @@ Utilizado para salvar dados de endereco. Pode ser ligado com Aluno, Escola e Pro
 |Nome|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |matriculaProfessor|Numero da matricula do professor|Int|-|PK|AUTO_INCREMENT
+|idTelefone|Numero indentificador do telefone principal do professor|Int|-|FK(telefone.idTelefone), NOT NULL|-
 |cpfProfessor|CPF do professor|Varchar|15|UNIQUE|-
 |nomeProfessor|Nome do professor|Varchar|64|-|-
 Utilizado para salvar dados de professores
