@@ -82,6 +82,11 @@ Utilizado para salvar diversos turnos de aula da escola
 |Nome|Descricao|Tipo|Tamanho|Restricao|ATRIBUTOS|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |idTelefone|Numero indentificador do telefone|Int|-|PK|AUTO_INCREMENT
+|cnpjEscola|Numero intentificador da escola a que o telefone pertence|Int|-|FK(escola.cnpjEscola)|-
+|matriculaProfessor|Numero intentificador do professor a quem o telefone pertence|Int|-|FK(professor.matriculaProfessor)|-
+|matriculaAluno|Numero intentificador do aluno a quem o telefone pertence|Int|-|FK(aluno.matriculaAluno)|-
+
+
 |dddTelefone|DDD do telefone|Int|-|NOT_NULL|-
 |numeroTelefone|Numero do telefone|Int|-|NOT_NULL|-
 |tipoTelefone|Tipo do telefone, ex: Celular, Interfone|Varchar|32|-|-
