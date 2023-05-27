@@ -1,3 +1,19 @@
+# listas de alunos e quantidade
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/9573df0c-b7f4-4294-8135-247252446ce4)
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/086d7599-07d5-4fe8-8d45-590a819a0cd2)
+
+
+# lista de professores e quantidade e suas disciplinas
+(Coloquei com as salas que eles lecionam como extra, por isso tem varios repetidos)
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/373df4f2-05d3-49df-91b1-2ac3fd0ff246)
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/18d6ff60-9594-415d-944d-97bf9cc23313)
+
+# disciplinas com a carga horária maior e a menor
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/bf93b882-ece2-4f34-9726-1f95dfec05db)
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/cd7ed719-b2ba-469d-b22e-24a05d4ad3c5)
+
+# turmas com datas que vai acabar em ordem decrescente
+![image](https://github.com/luis10barbo/estudos-banco-dados/assets/89195562/74895685-8421-4473-b970-7ea02a181363)
 
 # ALUNO
 
@@ -34,7 +50,6 @@ Utilizado para salvar dados de escolas
 |complemento|Complemento do endereco|Varchar|128|-|-
 
 Utilizado para salvar dados de endereco. Pode ser ligado com Aluno, Escola e Professora.
-
 
 # PROFESSOR
 
